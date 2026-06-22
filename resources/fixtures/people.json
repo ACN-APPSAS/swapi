@@ -1392,5 +1392,22 @@
     },
     "model": "resources.people",
     "pk": 83
+},
+{
+    "fields": {
+        "edited": "2014-12-20T21:17:50.498Z",
+        "name": "Grogu",
+        "created": "2014-12-20T20:35:04.260Z",
+        "gender": "male",
+        "skin_color": "green",
+        "hair_color": "none",
+        "height": "5",
+        "eye_color": "black",
+        "mass": "5",
+        "homeworld": 61,
+        "birth_year": "unknown"
+    },
+    "model": "resources.people",
+    "pk": 83
 }
 ]
