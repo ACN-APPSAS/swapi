@@ -170,6 +170,7 @@ class WookieeRendererTests(TestCase):
         expected_value = self.renderer.translate_to_wookie('Luke')
         # Only lowercase is translated; 'L' is uppercase so passes through
         self.assertIn(name_key, parsed)
+        self.assertEqual(parsed[name_key], expected_value)
 
 
 # ── Utils Tests ───────────────────────────────────────────────────────────────
