@@ -1,4 +1,4 @@
-Django==5.2
+Django==5.2.15
 dj-database-url==2.3.0
 django-cors-headers==4.7.0
 django-markdown-deux==1.0.6
