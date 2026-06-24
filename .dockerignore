@@ -1,0 +1,28 @@
+# Version control
+.git
+.gitignore
+
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+**/__pycache__
+
+# Local development artefacts
+db.sqlite3
+staticfiles/
+.env
+.env.*
+
+# CI / tooling config
+.travis.yml
+.claude/
+Makefile
+
+# Test output
+.coverage
+htmlcov/
+
+# OS noise
+.DS_Store
+Thumbs.db

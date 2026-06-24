@@ -36,10 +36,9 @@ class WookieeRenderer(renderers.JSONRenderer):
     }
 
     def render(self, data, media_type=None, renderer_context=None):
-        encoded_data = super(WookieeRenderer, self).render(
-            data, media_type, renderer_context
-        )
-        return bytes(self.translate_to_wookie(encoded_data))
+        encoded_data = super().render(data, media_type, renderer_context)
+        translated = self.translate_to_wookie(encoded_data.decode('utf-8'))
+        return translated.encode('utf-8')
 
     def translate_to_wookie(self, data):
         translated_data = ""

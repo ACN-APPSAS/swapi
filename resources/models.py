@@ -19,13 +19,13 @@ class EditableModel(models.Model):
     A model with a boolean that determins the read/write state of the model
     """
 
-    editable = models.NullBooleanField()
+    editable = models.BooleanField(null=True, blank=True)
 
 
 class Planet(DateTimeModel):
     """ A planet i.e. Tatooine """
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     name = models.CharField(max_length=100)
@@ -50,7 +50,7 @@ class Planet(DateTimeModel):
 class People(DateTimeModel):
     """ A person i.e. - Luke Skywalker """
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     name = models.CharField(max_length=100)
@@ -69,12 +69,12 @@ class People(DateTimeModel):
 
     gender = models.CharField(max_length=40, blank=True)
 
-    homeworld = models.ForeignKey(Planet, related_name="residents")
+    homeworld = models.ForeignKey(Planet, related_name="residents", on_delete=models.CASCADE)
 
 
 class Transport(DateTimeModel):
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     name = models.CharField(max_length=40)
@@ -129,7 +129,7 @@ class Vehicle(Transport):
 class Species(DateTimeModel):
     "A species is a type of alien or person"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     name = models.CharField(max_length=40)
@@ -148,7 +148,7 @@ class Species(DateTimeModel):
 
     average_lifespan = models.CharField(max_length=40)
 
-    homeworld = models.ForeignKey(Planet, blank=True, null=True)
+    homeworld = models.ForeignKey(Planet, blank=True, null=True, on_delete=models.SET_NULL)
 
     language = models.CharField(max_length=40)
 
@@ -158,7 +158,7 @@ class Species(DateTimeModel):
 class Film(DateTimeModel):
     """ A film i.e. The Empire Strikes Back (which is also the best film) """
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     title = models.CharField(max_length=100)

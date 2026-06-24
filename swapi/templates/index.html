@@ -86,6 +86,7 @@
           <h4 class="center">How can I support this?</h4>
           <p>With small donations we can keep swapi running for free, please consider throwing us some beer money to say thank you. With every $10 we can keep the site up for another month!</p>
 <p><form action="/stripe/donation" method="POST">
+          {% csrf_token %}
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="{{stripe_key}}"
