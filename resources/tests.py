@@ -6,7 +6,6 @@ Run with: SECRET_KEY=test-secret python manage.py test
 from __future__ import unicode_literals
 
 import json
-from unittest.mock import MagicMock
 
 from django.test import TestCase
 
